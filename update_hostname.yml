@@ -5,9 +5,8 @@
 
   tasks:
     - name: Set new hostname
-      command: hostnamectl set-hostname "{{ oeltest.scs.com }}"
-
-
+      command: hostnamectl set-hostname oeltest.scs.com
+      
     - name: Restarting network for changes to take effect
       service:
         name: network
