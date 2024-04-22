@@ -1,14 +1,9 @@
 ---
-- name: Change hostname on Oracle Enterprise Linux 7
+- name: Change hostname using hostnamectl
   hosts: all
   become: yes
 
   tasks:
     - name: Set new hostname
-      hostname:
-        name: ol7orddv.scs.com
+      command: hostnamectl set-hostname ol7orddv.scs.com
 
-    - name: Restarting network for changes to take effect
-      service:
-        name: network
-        state: restarted
