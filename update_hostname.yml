@@ -5,10 +5,10 @@
 
   tasks:
     - name: Set new hostname
-      hostname:
-        name: oel7orddv.scs.com
+      command: hostnamectl set-hostname "{{ new_hostname }}"
 
-   # - name: Restarting network for changes to take effect
-   #   service:
-   #     name: network
-   #     state: restarted
+
+    - name: Restarting network for changes to take effect
+      service:
+        name: network
+        state: restarted
