@@ -8,11 +8,6 @@
       hostname:
         name: ol7orddv.scs.com
 
-    - name: Update /etc/hostname
-      lineinfile:
-        path: /etc/hostname
-        line: '{{ ol7orddv.scs.com }}'
-
     - name: Restarting network for changes to take effect
       service:
         name: network
