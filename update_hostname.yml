@@ -1,13 +1,15 @@
 ---
-- name: Change hostname on Oracle Enterprise Linux 7
+- name: Run shell script to change hostname
   hosts: all
   become: yes
-
   tasks:
-    - name: Set new hostname
-      command: hostnamectl set-hostname oeltest.scs.com
-      
-    - name: Restarting network for changes to take effect
-      service:
-        name: network
-        state: restarted
+    - name: Copy shell script to server
+      copy:
+        src: change_hostname.sh  # Update this with the path to your shell script
+        dest: /tmp/change_hostname.sh         # Destination path on the server
+
+    - name: Make script executable
+      command: chmod +x /tmp/change_hostname.sh
+
+    - name: Execute shell script
+      command: /tmp/change_hostname.sh
