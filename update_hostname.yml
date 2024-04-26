@@ -1,15 +1,15 @@
 ---
-- name: Run shell script to change hostname
+- name: Clone scripts from GitHub and change hostname
   hosts: all
   become: yes
   tasks:
-    - name: Copy shell script to server
-      copy:
-        src: change_hostname.sh  # Update this with the path to your shell script
-        dest: /tmp/change_hostname.sh         # Destination path on the server
+    - name: Clone scripts from GitHub
+      git:
+        repo: https://github.com/NithinSunke/ansible-script.git  # Replace with your GitHub repository URL
+        dest: /tmp/scripts  # Destination directory on the server
 
-    - name: Make script executable
-      command: chmod +x /tmp/change_hostname.sh
+    - name: Make shell script executable
+      command: chmod +x /tmp/scripts/change_hostname.sh
 
-    - name: Execute shell script
-      command: /tmp/change_hostname.sh
+    - name: Execute shell script to change hostname
+      command: /tmp/scripts/change_hostname.sh
