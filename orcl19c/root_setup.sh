@@ -1,18 +1,6 @@
-. /vagrant/config/install.env
+sh /tmp/scripts/orcl19c/prepare_disks.sh
 
-echo "setting hostname"
-echo "======================================"
-hostnamectl set-hostname ${HOSTNAME}
-
-echo "******************************************************************************"
-echo "Set root and oracle password and change ownership of /u01." `date`
-echo "******************************************************************************"
-echo -e "${ROOT_PASSWORD}\n${ROOT_PASSWORD}" | passwd
-
-
-sh /vagrant/scripts/prepare_disks.sh
-
-sh /vagrant/scripts/install_os_packages.sh
+sh /tmp/scripts/orcl19c/install_os_packages.sh
 echo -e "${ORACLE_PASSWORD}\n${ORACLE_PASSWORD}" | passwd oracle
 
 mkdir -p ${SCRIPTS_DIR}
