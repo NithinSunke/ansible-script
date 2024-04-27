@@ -23,6 +23,4 @@ echo "SELinux." `date`
 echo "******************************************************************************"
 sed -i -e "s|SELINUX=enabled|SELINUX=permissive|g" /etc/selinux/config
 
-
-
 chown -R oracle.oinstall ${SCRIPTS_DIR} /u01 /u02
