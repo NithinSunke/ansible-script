@@ -25,11 +25,14 @@
         recurse: yes  # Apply the permissions recursively to all files and subdirectories
     
     
-    - name: Preparing the host
-      become: true
-      shell: /tmp/scripts/orcl19c/prepare_host.sh
+#    - name: Preparing the host
+#      become: true
+#      shell: /tmp/scripts/orcl19c/prepare_host.sh
 
 #    - name:  preparing disks 
 #      become: true
 #      shell: /tmp/scripts/orcl19c/prepare_disks.sh
 
+    - name:  install os packages for oracle database 
+      become: true
+      shell: /tmp/scripts/orcl19c/install_os_packages.sh
