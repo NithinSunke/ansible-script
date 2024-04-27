@@ -1,20 +1,4 @@
 
-
-
-
-
-
-
-
-
-su - oracle -c 'sh /vagrant/scripts/oracle_software_installation.sh'
-
-echo "******************************************************************************"
-echo "Run root scripts." `date`
-echo "******************************************************************************"
-sh ${ORA_INVENTORY}/orainstRoot.sh
-sh ${ORACLE_HOME}/root.sh
-
 echo "******************************************************************************"
 echo "Create the database and install the ORDS software." `date`
 echo "******************************************************************************"

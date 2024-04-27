@@ -47,6 +47,11 @@
 #      become_user: oracle
 #      shell: /tmp/scripts/orcl19c/oracle_software_installation.sh
 
-    - name:  running root.sh script 
+#    - name:  running root.sh script 
+#      become: true
+#      shell: /tmp/scripts/orcl19c/ora_root.sh
+
+    - name:  Creating database 
       become: true
-      shell: /tmp/scripts/orcl19c/ora_root.sh
+      become_user: oracle
+      shell: /tmp/scripts/orcl19c/oracle_create_database.sh

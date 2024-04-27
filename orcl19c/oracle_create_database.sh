@@ -1,4 +1,5 @@
-. /vagrant/config/install.env
+#!/bin/bash
+. /tmp/scripts/orcl19c/install.env
 
 echo "******************************************************************************"
 echo "Create a listener.ora file if it doesn't already exist." `date`
