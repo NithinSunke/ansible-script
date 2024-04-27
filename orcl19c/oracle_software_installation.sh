@@ -1,11 +1,12 @@
-. /vagrant/config/install.env
+#!/bin/bash
+. /tmp/scripts/orcl19c/install.env
 
 echo "******************************************************************************"
 echo "Unzip software." `date`
 echo "******************************************************************************"
 mkdir -p ${ORACLE_HOME}
 cd ${ORACLE_HOME}
-unzip -oq /vagrant/software/${DB_SOFTWARE}
+unzip -oq ${SOFTWARE_DIR}/${DB_SOFTWARE}
 
 echo "******************************************************************************"
 echo "Do software-only installation." `date`

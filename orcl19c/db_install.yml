@@ -2,11 +2,11 @@
 - name: Clone GitHub repository
   hosts: orcl19c
   tasks:
-    - name: install git
-      become: true
-      yum:
-        name: git
-        state: present
+ #   - name: install git
+ #     become: true
+ #     yum:
+ #       name: git
+ #       state: present
          
     - name: Remove directory if exists
       file:
@@ -37,10 +37,14 @@
 #      become: true
 #      shell: /tmp/scripts/orcl19c/install_os_packages.sh
 
-    - name:  oracle user env setup 
+#    - name:  oracle user env setup 
+#      become: true
+#      become_user: oracle
+#      shell: /tmp/scripts/orcl19c/oracle_user_environment_setup.sh
+
+    - name:  oracle database installation 
       become: true
       become_user: oracle
-      shell: /tmp/scripts/orcl19c/oracle_user_environment_setup.sh
-
+      shell: /tmp/scripts/orcl19c/oracle_software_installation.sh
 
 

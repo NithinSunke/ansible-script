@@ -6,10 +6,7 @@
 
 
 
-echo "******************************************************************************"
-echo "Prepare environment and install the software." `date`
-echo "******************************************************************************"
-su - oracle -c 'sh /vagrant/scripts/oracle_user_environment_setup.sh'
+
 su - oracle -c 'sh /vagrant/scripts/oracle_software_installation.sh'
 
 echo "******************************************************************************"
