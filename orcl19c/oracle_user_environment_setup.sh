@@ -1,6 +1,8 @@
 #!/bin/bash
 . /tmp/scripts/orcl19c/install.env
 
+mkdir -p ${SCRIPTS_DIR}
+
 echo "******************************************************************************"
 echo "Create environment script." `date`
 echo "******************************************************************************"
