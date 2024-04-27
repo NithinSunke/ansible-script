@@ -48,14 +48,14 @@ fi
 echo "******************************************************************************"
 echo "Check if database already exists." `date`
 echo "******************************************************************************"
-if [ ! -d ${DATA_DIR}/${ORACLE_SID^^} ]; then
+if [ ! -d ${DATA_DIR}/${ORACLE_SID} ]; then
 
   echo "******************************************************************************"
   echo "The database files don't exist, so create a new database." `date`
   echo "******************************************************************************"
   lsnrctl start
 
-  dbca -silent -createDatabase                                                 \
+  ${ORACLE_HOME}/bin/dbca -silent -createDatabase                                                 \
     -templateName General_Purpose.dbc                                          \
     -gdbname ${ORACLE_SID} -sid ${ORACLE_SID} -responseFile NO_VALUE           \
     -characterSet AL32UTF8                                                     \
@@ -77,7 +77,7 @@ if [ ! -d ${DATA_DIR}/${ORACLE_SID^^} ]; then
   echo "******************************************************************************"
   echo "Set the PDB to auto-start." `date`
   echo "******************************************************************************"
-  sqlplus / as sysdba <<EOF
+  ${ORACLE_HOME}/bin/sqlplus / as sysdba <<EOF
 alter system set db_create_file_dest='${DATA_DIR}';
 alter pluggable database ${PDB_NAME} save state;
 alter system set local_listener='LISTENER';
