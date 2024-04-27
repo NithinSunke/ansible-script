@@ -1,3 +1,4 @@
+#!/bin/bash
 . /tmp/scripts/orcl19c/install.env
 
 echo "setting hostname"

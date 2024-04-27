@@ -1,3 +1,5 @@
+#!/bin/bash
+
 function prepare_disk {
   MOUNT_POINT=$1
   DISK_DEVICE=$2
@@ -18,5 +20,5 @@ function prepare_disk {
   mount ${MOUNT_POINT}
 }
 
-prepare_disk /u01 /dev/sdb
 prepare_disk /u02 /dev/sdc
+prepare_disk /u03 /dev/sdd
