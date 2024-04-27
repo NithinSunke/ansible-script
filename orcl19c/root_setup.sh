@@ -1,12 +1,10 @@
 
 
-sh /vagrant/scripts/install_os_packages.sh
-echo -e "${ORACLE_PASSWORD}\n${ORACLE_PASSWORD}" | passwd oracle
 
-mkdir -p ${SCRIPTS_DIR}
-mkdir -p ${SOFTWARE_DIR}
-mkdir -p ${DATA_DIR}
-chown -R oracle.oinstall ${SCRIPTS_DIR} /u01 /u02
+
+
+
+
 
 echo "******************************************************************************"
 echo "Prepare environment and install the software." `date`

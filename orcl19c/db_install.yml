@@ -33,6 +33,7 @@
 #      become: true
 #      shell: /tmp/scripts/orcl19c/prepare_disks.sh
 
-    - name:  install os packages for oracle database 
-      become: true
-      shell: /tmp/scripts/orcl19c/install_os_packages.sh
+#    - name:  install os packages for oracle database 
+#      become: true
+#      shell: /tmp/scripts/orcl19c/install_os_packages.sh
+
