@@ -1,3 +1,5 @@
+#!/bin/bash
+
 function prepare_disk {
   MOUNT_POINT=$1
   DISK_DEVICE=$2
